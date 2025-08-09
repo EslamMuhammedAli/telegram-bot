@@ -1,10 +1,14 @@
 import json
 import telebot
 import os
+import threading
+import random
+import time
+from datetime import datetime, timedelta
 
 # ========= الإعدادات الأساسية =========
-TOKEN = os.getenv("TOKEN")
-bot = telebot.TeleBot("BOT_TOKEN")
+TOKEN = "7567768829:AAGo0__7aukL_UCDhcaOWecttc_WgTRSE6U"
+bot = telebot.TeleBot(TOKEN)
 DATA_FILE = "user_data.json"
 
 # روابط الخطط التدريبية
@@ -258,4 +262,3 @@ threading.Thread(target=send_daily_messages, daemon=True).start()
 # ========= تشغيل البوت =========
 print("🔥 Bot is running...")
 bot.polling()
-
